@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Formulario</h2>
+    <form>
+        <label for="Pnombre">Nombre</label>
+        <input type="text" id="Pnombre" name="Pnombre"><br><br>
+        <label for="Ncompras">Cantidad De Unidades</label>
+        <input type="number" id="Ncompras" name="Ncompras"><br><br>
+        <label for="pvnp">¿Que tipo de cliente es?</label>
+        <select name="pvnp" id="pvnp">
+            <option values="No Prime">No Prime</option>
+            <option values="Prime">Prime</option>
+            <option values="Vip">Vip</option>
+        </select><br><br>
+        <label for="cau">Tipo de Entrega</label><br>
+        <input type="radio" id="cau"name="T_Entrega" values="cau">
+        <label for="cau">Click Al Auto</label><br>
+        <input type="radio" id="dad"name="T_Entrega" values="dad">
+        <label for="dad">Despacho A Domicilio</label><br>
+        <input type="radio" id="de"name="T_Entrega" values="de">
+        <label for="de">Despacho Especial</label><br><br>
+        <label for="email">Ingrese su Correo:</label>
+        <input type="email" id="email" name="email">
+        <input type="submit" value="Submit">
+    </form>
+    <button type="Boton"onclick="alert('Enviado')">Enviar</button>
+</body>
+</html>
