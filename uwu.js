@@ -2,14 +2,18 @@ var modificar = (listadoNuevo)=>{
     let eNombre = document.getElementById("Pnombre");
     let eC_Unidades = document.getElementById("Ncompras");
     let eT_cliente = document.getElementById("pvnp");
-    let eT_entrega = document.getElementById("cau");
-    let eT_entrega = document.getElementById("dad");
-    let eT_entrega = document.getElementById("de");
+    let eT_entrega1 = document.getElementById("cau");
+    let eT_entrega2 = document.getElementById("dad");
+    let eT_entrega3 = document.getElementById("de");
     let eCorreo = document.getElementById("email");
     let nombre=eNombre.value;        
     let c_unidades = eC_Unidades.value;
     let t_cliente = eT_cliente.value;
     let t_entrega = eT_entrega.checked;
+
+
+
+
     let correo = eCorreo.value;
     let indice = eBtnEditarUp.value;
     listadoNuevo[indice].nombre = nombre;
@@ -32,21 +36,25 @@ var eliminar = (listadoNuevo)=>{
 }
 var cargarTabla = (listadoNuevo)=>{
     let eContenedorTabla = document.getElementById("contenedorTabla");
-    let eNombre = document.getElementById("nombre");
-    let eC_Unidades = document.getElementById("c_unidades");
-    let eT_cliente = document.getElementById("t_cliente");
-    let eT_entrega = document.getElementById("t_entrega");
-    let eCorreo = document.getElementById("correo");
+    let eNombre = document.getElementById("Pnombre");
+    let eC_Unidades = document.getElementById("Ncompras");
+    let eT_cliente = document.getElementById("pvnp");
+    let eT_entrega1 = document.getElementById("cau");
+    let eT_entrega2 = document.getElementById("dad");
+    let eT_entrega3 = document.getElementById("de");
+    let eCorreo = document.getElementById("email");
     render = "<table>"
     render+="<tr><th>Nombre</th><th>Cantidad_Unidades</th><th>Tipo_cliente<th>Tipo_Entrega</th><th>Correo</th></tr>"
     for (let i = 0; i <listadoNuevo.length; i++) {
         const element = listadoNuevo[i];
         render+="<tr>"
-        render+="<td>"+element.nombre+"</td>"
-        render+="<td>"+element.c_unidades+"</td>"
-        render+="<td>"+element.t_cliente+"</td>"
-        render+="<td>"+element.t_entrega+"</td>"
-        render+="<td>"+element.correo+"</td>"
+        render+="<td>"+element.Pnombre+"</td>"
+        render+="<td>"+element.Ncompras+"</td>"
+        render+="<td>"+element.pvnp+"</td>"
+        render+="<td>"+element.cau+"</td>"
+        render+="<td>"+element.dad+"</td>"
+        render+="<td>"+element.de+"</td>"
+        render+="<td>"+element.email+"</td>"
         render+="<td>"
         render+="<button id='btnEditar"+i+"'>Editar</button>"
         render+="<button id='btnEliminar"+i+"'>Eliminar</button>"
@@ -61,11 +69,13 @@ var cargarTabla = (listadoNuevo)=>{
         var eBtn2 = document.getElementById("btnEliminar"+i);
         let element = listadoNuevo[i]
         eBtn.addEventListener("click",()=>{
-            eNombre.value = element.nombre;
-            eC_Unidades.value = element.c_unidades;
-            eT_cliente.value = element.t_cliente;
-            eT_entrega.value = element.t_entrega;
-            eCorreo.value = element.correo;
+            eNombre.value = element.Pnombre;
+            eC_Unidades.value = element.Ncompras;
+            eT_cliente.value = element.pvnp;
+            eT_entrega.value = element.cau;
+            eT_entrega.value = element.dad;
+            eT_entrega.value = element.de;
+            eCorreo.value = element.email;
             let sEditar = "<button type='button' id='btnEditar' value='"+i+"'>Editar</button>";
              
             let contenedorBoton = document.getElementById('contenedorBtnExtra');
@@ -74,11 +84,13 @@ var cargarTabla = (listadoNuevo)=>{
             eBtnEditarUp.addEventListener('click',()=>modificar(listadoNuevo))
         })
         eBtn2.addEventListener("click",()=>{
-            eNombre.value = element.nombre;
-            eC_Unidades.value = element.c_unidades;
-            eT_cliente.value = element.t_cliente;
-            eT_entrega.value = element.t_entrega;
-            eCorreo.value = element.correo;
+            eNombre.value = element.Pnombre;
+            eC_Unidades.value = element.Ncompras;
+            eT_cliente.value = element.pvnp;
+            eT_entrega.value = element.cau;
+            eT_entrega.value = element.dad;
+            eT_entrega.value = element.de;
+            eCorreo.value = element.email;
             let sEliminar = "<button type='button' id='btnEliminar' value='"+i+"'>Eliminar</button>";
             let contenedorBoton = document.getElementById('contenedorBtnExtra');
             contenedorBoton.innerHTML = sEliminar;
@@ -91,41 +103,50 @@ var cargarTabla = (listadoNuevo)=>{
 }
 
 var registrar = ()=>{
-    let eNombre = document.getElementById("nombre");
-    let eC_Unidades = document.getElementById("c_unidades");
-    let eT_cliente = document.getElementById("t_cliente");
-    let eT_entrega = document.getElementById("t_entrega");
-    let eCorreo = document.getElementById("correo");
-    let eComentario=document.getElementById("comentario");
+    let eNombre = document.getElementById("Pnombre");
+    let eC_Unidades = document.getElementById("Ncompras");
+    let eT_cliente = document.getElementById("pvnp");
+    let eT_entrega1 = document.getElementById("cau");
+    let eT_entrega2 = document.getElementById("dad");
+    let eT_entrega3 = document.getElementById("de");
+    let eCorreo = document.getElementById("email");
     let nombre = eNombre.value;
     let c_unidades = eC_Unidades.value;
     let t_cliente = eT_cliente.value;
-    let t_entrega = eT_entrega.value;
+    if(eT_entrega1==on){
+        let entrega=entrega.checked
+    }
+    else if(eT_entrega2==on){
+        let entrega=entrega.checked
+    }
+    else if(eT_entrega3==on){
+        let entrega=entrega.checked
+    }
+
+
+
     let correo = eCorreo.value;
-    let comentario = eComentario.value;
     let listadoPersonas = localStorage.getItem("personas");
     let listadoAntiguo = JSON.parse(listadoPersonas);
     if(listadoAntiguo==null){
         let persona = {
             "id": 0,
-            "nombre":nombre,
-            "c_unidades":c_unidades,
-            "t_cliente":t_cliente,
-            "t_entrega":t_entrega,
-            "correo":correo,
-            "comentario":comentario
+            "Pnombre":nombre,
+            "Ncompras":c_unidades,
+            "pvnp":t_cliente,
+            "entrega":entrega,
+            "email":correo,
         }
         listadoNuevo = [persona]
     }else{
         //listadoAntiguo.push(persona)
         let persona = {
             "id": listadoAntiguo.length,
-            "nombre":nombre,
-            "c_unidades":c_unidades,
-            "t_cliente":t_cliente,
-            "t_entrega":t_entrega,
-            "correo":correo,
-            "comentario":comentario
+            "Pnombre":nombre,
+            "Ncompras":c_unidades,
+            "pvnp":t_cliente,
+            "entrega":entrega,
+            "email":correo,
         }
         listadoNuevo = [...listadoAntiguo,persona]
     }
